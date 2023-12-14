@@ -32,21 +32,25 @@
 <h3>Upload GitHub</h3>
 <p>Para você subir uma nova branch, ou seja, uma nova atualização desse projeto use os seguintes comandos, uma vez que você tem o <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">git instalado</a>.</p>
 <p>Crie com o comando abaixo uma nova branch local</p>
+
 ```bash
 git checkout -b <nome_branch>
 ```
   
 <p>Adicione todas as alterações feitas na sua branch local</p>
+
 ```bash
 git add .
 ```
 
-<p>Substitua ```Seu Commit``` por uma frase que defina suas alterações objetivamente</p>
+<p>Substitua `Seu Commit` por uma frase que defina suas alterações objetivamente</p>
+
 ```bash
 git commit -m "Seu Commit"
 ```
 
 <p>Enviar (subir) branch para o github</p>
+
 ```bash
 git push origin <nome_branch>
 ```
