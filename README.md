@@ -25,3 +25,28 @@
   <li>Figma</li>
     <p>Ele é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web, com ferramentas offline adicionais para aplicações desktop para GNU/Linux, macOS e Windows. Uso mais complexo por ser ferramenta profissional.</p>
 </ul>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY_hsCbxNdfthk7Bo9uC3lVfn3V9wDo82DfQ&usqp=CAU"/>
+<h2>O que é GitHub</h2>
+<p>O GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.</p>
+<h3>Upload GitHub</h3>
+<p>Para você subir uma nova branch, ou seja, uma nova atualização desse projeto use os seguintes comandos, uma vez que você tem o <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">git instalado</a>.</p>
+<p>Crie com o comando abaixo uma nova branch local</p>
+```bash
+git checkout -b <nome_branch>
+```
+  
+<p>Adicione todas as alterações feitas na sua branch local</p>
+```bash
+git add .
+```
+
+<p>Substitua ```Seu Commit``` por uma frase que defina suas alterações objetivamente</p>
+```bash
+git commit -m "Seu Commit"
+```
+
+<p>Enviar (subir) branch para o github</p>
+```bash
+git push origin <nome_branch>
+```
