@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <title>Vivarte - Login</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --orange-color: #FF914C;
+    --yellow-color: #FDE791;
+    --blue-color: #0b83c9;
+    --red-color: #FF5657;
+    --black-color: #444444;
+    --form-yellow-color: #fff5aa;
+    --dark-yellow-color: #cfbc6f;
+} 
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: var(--dark-yellow-color);
+}
+
+/* ## Estilo do Cabeçalho ##*/
+.container header {
+    background-color: var(--orange-color);
+    width: 100%;
+    padding: 5px;
+}
+
+.container header .header-content {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.container header .header-content .logo {
+    display: flex;
+    align-items: center;
+}
+
+.container header .header-content .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1.5px solid #fff;
+    padding: 2px;
+}
+
+#vivarte {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.art-header {
+    font-family: 'Poppins', sans-serif;
+    color: var(--yellow-color);
+}
+
+.links {
+    padding: 5px;
+    width: 35%;
+}
+
+
+.links nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.bttn {
+    background-color: #fff;
+    color: var(--red-color);
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 15px;
+    border: 2px solid #fff;
+    transition: 0.4s;
+}
+
+.bttn:hover {
+    text-decoration: none;
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 
+    
+    600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: var(--yellow-color);
+}
+
+/* ## Estilo do Conteúdo Main ##*/
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.box-form {
+    background-color: var(--form-yellow-color);
+    padding: 20px;
+    width: 80%;
+    box-shadow: 3px 2px 5px 1px #00000051;
+    border-radius: 10px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ball-and-logo {
+    background-color: var(--orange-color);
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ball-and-logo h3 {
+    color: #fff;
+}
+
+#art-form {
+    color: var(--yellow-color);
+    text-decoration: underline;
+}
+
+.header-login {
+    text-align: center;
+    font-size: 20px;
+}
+
+.box-header-logo, form {
+    width: 100%;
+}
+
+
+.input-labels {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input-labels input {
+    padding: 10px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    outline-color: #fff;
+    border-radius: 20px;
+    background-color: var(--orange-color);
+    transition: 0.4 s;
+}
+
+input:focus {
+    background-color: #3f3f3f;
+}
+
+.input-labels input::placeholder{
+    color: #ededed;
+}
+
+.btn-login {
+    border: 2px solid var(--black-color);
+}
+
+.btn-login:hover {
+    cursor: pointer;
+}
+
+form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.register-link {
+    color: var(--orange-color);
+    margin-bottom: 25px;
+}
+
+.input-labels label {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.check {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.check label:hover {
+    cursor: pointer;
+}
+
+.check label {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+footer {
+    background-color: var(--orange-color);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+footer .url {
+    color: #121212;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ## Detalhes Splashs ## */ 
+.splashs {
+    display: flex;
+}
+
+.splash01, .splash02 {
+    height: 230px;
+    position: relative;
+}
+.splash01 {
+    left: -70px;
+   
+}
+
+.splash02 {
+    right:-74.5%;
+}
+
+
+/* ## Responsividade ##*/
+
+/* -- Tabletes --*/
+@media screen and (max-width: 1200px){
+  .showcase {
+    height: 240px;
+    margin-left: 20px;
+  }
+  
+  .showcase:hover {
+    height: 250px;
+  }
+
+  .splash01, .splash02 {
+    display: none;
+  }
+}
+
+
+
+/* -- Celulares -- */
+@media screen and (max-width: 700px){
+  body {
+    overflow-x: hidden !important;
+    overflow-y: scroll;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: var(--yellow-color);
+  }
+  
+  header {
+    width: 200%;
+  }
+  
+  .container header .header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bttn {
+    display: none;
+  }
+  
+  .links {
+    width: 80%;
+    margin-top: 20px;
+  }
+  .welcome {
+    width: 95%;
+  }
+  
+  .content-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    flex-direction: column;
+  }
+  
+  .presentation {
+    order: 2;
+  }
+  
+  .actions {
+    order: 3;
+  }
+  
+  .img-arte {
+    order: 1;
+  }
+  
+  
+  .presentation {
+    width: 90%;
+  }
+  
+  .presentation h2 {
+    margin-bottom: 20px;
+    color: var(--red-color);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .presentation p {
+    text-align: justify;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .splash01, .splash02 {
+    display: none;
+  }
+  
+  .showcase {
+    height: 150px;
+  }
+  
+  .showcase:hover {
+    height: 130px;
+  }
+  
+  .actions {
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    border-bottom: 50px solid var(--orange-color);
+  }
+}
+
+
+
+
+
+
+</style>
+<body>
+    <!-- ## Container principal ## -->
+    <div class="container">
+        <!-- ## Cabeçalho ## -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo.png" alt="logo">
+                    <h1 id="vivarte">Viv<span class="art-header">arte</span></h1>
+                </div>
+                <div class="links">
+                    <nav>
+                        <ul>
+                            <li><a class="link" href="#">Sobre nós</a></li>
+                            <li><a class="link" href="#">Contato</a></li>
+                            <li><a class="link" href="#">Apoiar</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- ## Conteúddo ## -->
+        <main class="content">
+            <!-- ## Container que está o formulário ## -->
+            <div class="box-form">
+                <!-- ## Div que mostra a bola Vivarte e seu cabeçalho form ## -->
+                <div class="box-header-logo">
+                    <div class="ball-and-logo">
+                        <h3>VIV<span id="art-form">ARTE</span></h3>
+                    </div>
+                    <h2 class="header-login">Faça seu Login</h2>
+                </div>
+                <!-- ## Formulário ## -->
+                <form method="POST" action="{% url 'account_login' %}">
+                    <!-- ## Input Usuário já com a label ## -->
+                    <div class="input-labels">
+                        <label for="id_login">Usuário</label>
+                        <input type="text" id="id_login" name="login" placeholder="Nome de usuário" required/>
+                    </div>
+                
+                    <!-- ## Input Senha já com a label ## -->
+                    <div class="input-labels">
+                        <label for="id_password">Senha</label>
+                        <input type="password" id="id_password" name="password" placeholder="Sua senha" required/>
+                    </div>
+                    
+                    <div class="check">
+                        <input type="checkbox" id="check" name="show"  onchange="showPassword()">
+                        <label for="check">Mostrar senha</label>
+                    </div>
+                    
+
+                    <script>
+                        const input_password = document.getElementById('id_password');
+
+                        function showPassword(){
+                            var password_ocuted = input_password.type === 'password' ? true : false;
+                            if(password_ocuted){
+                                input_password.type = 'text';
+                            } else {
+                                input_password.type = 'password';
+                            }
+                        }
+
+                    </script>
+
+                    {% if form.errors %}
+
+                    <p class="erro">Usuário ou senha inválidos. Tente novamente</p>
+                
+                    {% endif %}
+
+                    <!-- ## Botão Entrar já com a label ## -->
+                    <div class="input-labels">
+                        <input id="login" style="background-color: #FDE791; border: 1.6px solid var(--black-color); color: var(--black-color); font-weight: bold;" class="btn-login" type="submit" value="Entrar" required/>
+                    </div>
+                
+                    {% csrf_token %}
+                </form>
+                
+                <a class="register-link" href="{% url 'account_signup' %}">Novo Cadastro</a>
+            </div>
+        </main>
+        <footer>
+            <a class="url" href="index.html">www.vivarte.com</a>
+        </footer>
+        <div style="display: none;" class="splashs">
+            <img class="splash01" src="img/splash01.png" alt="splash">
+            <img class="splash02" src="img/splash02.png" alt="splash">
+        </div>
+    </div>
+</body>
+</html>
